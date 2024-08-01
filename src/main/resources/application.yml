@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: ${spt.datasource.driver-class-name}
+    url: jdbc:mysql://${spt.datasource.host}:${spt.datasource.port}/${spt.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${spt.datasource.username}
+    password: ${spt.datasource.password}
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
